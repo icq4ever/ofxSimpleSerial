@@ -23,3 +23,7 @@ Complete messages exist between `\n`'s, sent for example from Arduino with `Seri
 * The other party (Arduino for example) sends an update after it recieves this.
 
 ###### This ensures an in-sync transfer of data
+
+### TODO
+* at the moment, test working with OF 0.10.1
+* clean example...
