@@ -1,34 +1,38 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 
 //--------------------------------------------------------------
-void testApp::setup()
+void ofApp::setup()
 {	 
 	ofSetVerticalSync(true);
 	ofBackground(0, 0, 0);
 	
-	serial.setup("/dev/tty.usbserial-A70060V8", 9600);
+	serial.setup("/dev/ttyUSB0", 9600);
 	serial.startContinuousRead();
-	ofAddListener(serial.NEW_MESSAGE,this,&testApp::onNewMessage);
+	ofAddListener(serial.NEW_MESSAGE,this,&ofApp::onNewMessage);
 	
 	message = "";
 }
 
-void testApp::onNewMessage(string & message)
+void ofApp::onNewMessage(string & message)
 {
 	cout << "onNewMessage, message: " << message << "\n";
 	
 	vector<string> input = ofSplitString(message, ",");
 	
-	if(input.size() >= 3)
-	{
-	   red =	input.at(0) == "r";
-	   green =	input.at(1) == "g";
-	   blue =	input.at(2) == "b";
+	// if(input.size() >= 3)
+	// {
+	//    red =	input.at(0) == "r";
+	//    green =	input.at(1) == "g";
+	//    blue =	input.at(2) == "b";
+	// }
+	for(int i=0; i<input.size(); i++){
+		cout << input.at(0) << ", ";
 	}
+	cout << endl;
 }
 
-void testApp::update()
+void ofApp::update()
 {
 	if(requestRead)
 	 {
@@ -39,7 +43,7 @@ void testApp::update()
 }
 
 //--------------------------------------------------------------
-void testApp::draw()
+void ofApp::draw()
 {
 	if(red)
 	 {
@@ -59,6 +63,6 @@ void testApp::draw()
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
+void ofApp::mousePressed(int x, int y, int button){
 	requestRead = true;
 }

@@ -1,5 +1,4 @@
-#ifndef _TEST_APP
-#define _TEST_APP
+#pragma once
 
 #include "ofMain.h"
 #include "ofxSimpleSerial.h"
@@ -8,7 +7,7 @@
 
 using namespace std;
 
-class testApp : public ofBaseApp{
+class ofApp : public ofBaseApp{
 	
 	public:
 	
@@ -29,5 +28,4 @@ class testApp : public ofBaseApp{
 		
 };	
 
-#endif	
 
