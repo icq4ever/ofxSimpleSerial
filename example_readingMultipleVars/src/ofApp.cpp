@@ -27,7 +27,7 @@ void ofApp::onNewMessage(string & message)
 	//    blue =	input.at(2) == "b";
 	// }
 	for(int i=0; i<input.size(); i++){
-		cout << input.at(0) << ", ";
+		cout << input.at(i) << ", ";
 	}
 	cout << endl;
 }
