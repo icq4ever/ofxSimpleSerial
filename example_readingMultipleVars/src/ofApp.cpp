@@ -37,7 +37,7 @@ void ofApp::update()
 	if(requestRead)
 	 {
 		cout << "sendRequest\n";
-		serial.sendRequest();
+		// serial.sendRequest();
 		requestRead = false;
 	 }
 }
@@ -60,6 +60,8 @@ void ofApp::draw()
 		ofSetColor(0, 0, 255);
 		ofRect(66, 0, 33, 100);
 	 }
+
+	 ofDrawBitmapStringHighlight(ofGetTimestampString(), ofVec2f(20, ofGetHeight()-20), ofColor::fromHex(0xFFFF00), ofColor::fromHex(0x000000));
 }
 
 //--------------------------------------------------------------

@@ -1,5 +1,4 @@
-﻿#ifndef _OFX_SIMPLE_SERIAL
-#define _OFX_SIMPLE_SERIAL
+﻿#pragma once 
 
 #include "ofSerial.h"
 #include "ofEvents.h"
@@ -29,5 +28,3 @@ protected:
 	void			update(ofEventArgs & args);
 	void			read();
 };
-
-#endif

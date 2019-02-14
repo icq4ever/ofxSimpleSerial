@@ -27,6 +27,7 @@ void ofxSimpleSerial::stopContinuousRead() {
 void ofxSimpleSerial::sendRequest()
 {
 	if (bWriteByte) writeByte('r');
+	// cout << "requested" << endl;
 	ofAddListener(ofEvents().update, this, &ofxSimpleSerial::update);
 }
 
